@@ -1,0 +1,369 @@
+/* Navbar */
+.navbar {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.collapse a {
+    color: #fff;
+    font-family: 'Staatliches', sans-serif;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    color: #fff;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ff9900;
+    transition: color 0.3s;
+}
+
+
+.btn-custom:hover {
+    background-color: #fccb83;
+}
+
+.bg-custom {
+    background-color: rgb(36, 36, 36);
+}
+
+/* Button do Main */
+
+.btn-custom {
+    background-color: #f4732a;
+    color: #ffffff;
+    font-family: 'Staatliches', sans-serif;
+
+}
+
+
+.container-login {
+    background-color: #f4732a;
+}
+
+
+/* Profile */
+
+.btn-prf{
+    margin-top: 15px;
+    background-color: #f4732a;
+}
+
+.card-profile {
+    width: 500px;
+    background-color: rgb(36, 36, 36);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    bottom: 20px;
+}
+.card-body-profile {
+    color: #fff;
+    width: 500px;
+    background-color: rgb(36, 36, 36);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    bottom: 20px;
+}
+
+.buttonprofile{
+    font-family: 'Staatliches', sans-serif;
+}
+
+/* Sobre */
+
+
+.card {
+    width: 1000px;
+    background-color: #f4732a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    bottom: 20px;
+}
+
+.card-equipe h1 {
+    font-family: 'Staatliches', sans-serif;
+    color: #fff;
+}
+
+.card h1 {
+    font-family: 'Staatliches', sans-serif;
+    color: #fff;
+}
+
+.card p {
+    font-size: large;
+    font-style: italic;
+    color: #fff;
+}
+
+.card-equipe p {
+    font-size: large;
+    font-style: italic;
+    color: #fff;
+}
+
+.card-equipe {
+    width: 590px;
+    background-color: #f4732a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    float: right;
+}
+
+.imagex {
+    margin-left: 60px;
+    flex: 1;
+}
+
+
+/* Cor das fontes do Index */
+
+.container h4,
+h1 {
+    color: #000;
+}
+
+.textinicial {
+    color: #000;
+}
+
+/* Footer */
+
+.footer {
+    color: #fff;
+}
+
+/* Sections do Index */
+
+.btn-index h1 {
+    color: #fff;
+    font-family: 'Staatliches', sans-serif;
+}
+
+.textinicio {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.textinicio p {
+    color: #000;
+}
+
+.imageinicio {
+    flex: 1;
+    margin-left: 200px;
+}
+
+.container-index {
+    border-radius: 1rem;
+    margin: auto;
+    width: 1300px;
+    align-items: center;
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.carouselfundo {
+    background-color: rgba(36, 36, 36, 0.562);
+}
+
+.carousel-item {
+    border-radius: 1rem;
+}
+
+.ver-mais {
+    justify-content: center;
+    display: flex;
+    font-family: 'Staatliches', sans-serif;
+}
+
+/* Cursos */
+
+.btn-crs{
+    background-color: #cf7c00;
+}
+
+.btn {
+    padding: 10px 38px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    transition: 1s;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    transition: 1s;
+    background-color: #e25c0f;
+    color: #fff;
+}
+
+/* Imagens do curso */
+
+.cursoimg {
+    display: flex;
+    justify-content: center;
+}
+
+.curso-img {
+    width: 150px;
+    height: 150px;
+}
+
+/* Cards e textos Sobre */
+
+.card-curs {
+    margin: auto;
+    justify-content: center;
+    background-color: rgb(36, 36, 36);
+    width: 550px;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card-curs ul,
+li {
+    color: #fff;
+}
+
+.card-curs p {
+    text-align: center;
+    color: #fff;
+}
+
+.card-curs h4 {
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    color: #f4732a;
+}
+
+
+.textcurso h1 {
+    font-family: 'Staatliches', sans-serif;
+    color: #f4732a;
+}
+
+.textcurso {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    width: 150px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+/* Register & Login */
+
+.card-body-reg {
+    background-color: rgb(36, 36, 36);
+}
+
+.card-regi {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: auto;
+    bottom: 20px;
+    background-color: rgb(36, 36, 36);
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-regi label,
+h2,
+p,
+a {
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: 1s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e96118;
+}
+
+
+/* Index */
+
+.card-cursos ul,
+li {
+    color: #fff;
+}
+
+.card-cursos p {
+    text-align: center;
+    color: #fff;
+}
+
+.card-cursos h4 {
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    color: #f4732a;
+}
+
+
+.card-cursos {
+    margin: auto;
+    background-color: rgb(36, 36, 36);
+    width: 250px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.textinicio2 h1 {
+    color: #f4732a;
+}
+
+.textinicio2 {
+    margin: auto;
+    background-color: rgb(36, 36, 36);
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+body {
+    background-image: url('../src/img/background.png');
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-attachment: fixed;
+}
+
+/* Footer */
+
+footer.row {
+    text-align: center;
+}
+
+
+footer.bg-custom {
+    background-color: rgb(36, 36, 36);
+
+}
+
+/* Alunos */
+
+.card-alunos{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    bottom: 20px;
+    background-color: white;
+}
