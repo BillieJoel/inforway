@@ -367,3 +367,24 @@ footer.bg-custom {
     bottom: 20px;
     background-color: white;
 }
+
+.button-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* Para que a lista se comporte como um bloco de nível inline */
+}
+
+.button-list li {
+    display: inline-block; /* Coloca os itens da lista lado a lado */
+    margin-right: 10px; /* Espaçamento entre os itens (pode ajustar conforme necessário) */
+}
+
+.button-list li a {
+    display: block;
+    padding: 10px 15px; /* Espaçamento interno do "botão" */
+    background-color: #3498db; /* Cor de fundo do "botão" */
+    color: #fff; /* Cor do texto do "botão" */
+    text-decoration: none;
+    border-radius: 5px; /* Borda arredondada */
+}

@@ -25,4 +25,16 @@ include_once('../helpers/isActivePage.php');
     </div>
 <?php 
     }
+     if($_SESSION['user_level'] == 'teacher'){
+    ?>
+    <div class="list-group mt-4">
+    <span href="profile.php" class="list-group-item fw-bold">
+        Professores
+    </span>
+        <a href="courses.php" class="list-group-item list-group-item-action <?= isActivePage($currentPage, 'courses') ?>"><i class="bi bi-journals"></i> Gerenciar Cursos</a>
+       
+        
+    </div>
+<?php 
+    }
 ?>

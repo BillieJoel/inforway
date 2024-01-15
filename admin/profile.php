@@ -4,7 +4,8 @@ $pageInfo = array(
     'description' => 'Visualize e gerencie suas informações de perfil.',
     'pageName' => 'profile',
 );
-
+include_once('../helpers/database.php');
+    $connection = connectDatabase();
 include_once('../components/admin/header.php');
 
 $user_id = $_SESSION['user_id'];

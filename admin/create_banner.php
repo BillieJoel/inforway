@@ -32,11 +32,12 @@ if (mysqli_num_rows($result) > 0) {
                 <label for="courses">Cursos</label>
                 <select name="course_id" id="courses">
                     <?php foreach ($banners as $banner) { ?>
-                        <option value="<?php echo $banner["course_id"]; ?>"><?php echo $banner["name_course"] ?></option>
+                        <option value="<?php echo $banner["course_id"]; ?>"><?php echo $banner["name_course"]." id:".$banner["course_id"] ?></option>
                        
                     <?php } ?>
                      <option value="0"><?php echo "outro" ?></option>
                 </select>
+                
             </div>
 
             <button type="submit" class="btn btn-primary">criar banner</button>

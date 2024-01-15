@@ -17,9 +17,7 @@ if ($_SESSION['user_level'] != 'admin'){
 
 
     
-    $query2 = "SELECT * FROM courses";
-
-    $result = mysqli_query($connection, $query2);
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $course_id = $_POST["course_id"];
         $imageDirectory = '../../src/image_banners/';

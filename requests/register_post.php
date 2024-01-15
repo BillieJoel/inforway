@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $cpf = $_POST['cpf'];
     $date = $_POST['date'];
-   if(strlen($cpf)==11){
+  
     
      
      
@@ -18,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = mysqli_real_escape_string($connection, $name);
     $email = mysqli_real_escape_string($connection, $email);
     $password= mysqli_real_escape_string($connection, $password);
+
     $cpf = mysqli_real_escape_string($connection, $cpf);
+    $date = mysqli_real_escape_string($connection, $date);
    
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
     $cpf_hashed = password_hash($cpf, PASSWORD_DEFAULT);
@@ -26,20 +28,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $query_to_check = "SELECT * FROM users WHERE email = '$email'";
     $results_to_check = mysqli_query($connection, $query_to_check);
-    
-    if ($results_to_check) {
-        // Verifica se há algum resultado retornado pela consulta
-        if (mysqli_num_rows($results_to_check) > 0) {
-            // Se houver algum resultado, o e-mail já existe
-            header("Location: ../login.php");
-            exit;
+    if (strlen($cpf) == 11 && is_numeric($cpf) && is_numeric($date)) {
+      if (mysqli_num_rows($results_to_check) > 0){
+            $_SESSION['message'] = "O email fornecido já está em uso";
+            $_SESSION['message_type'] = "danger";
+            header("Location: ../register.php");
+           
         }
     } else {
-        // Tratar erro na consulta
-        echo "Erro na consulta: " . mysqli_error($connection);
+        $_SESSION['message'] = "Security alert";
+        $_SESSION['message_type'] = "danger";
+        header("Location: ../register.php");
         exit;
-    }
+        
     
+
+
+
+
 
     
     $query = "INSERT INTO users (user_name, email, password, cpf, user_level,date_of_birth) VALUES ('$name', '$email', '$password_hashed', '$cpf_hashed', 'common','$date')";

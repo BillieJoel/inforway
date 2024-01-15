@@ -15,6 +15,7 @@ include_once('../components/admin/header.php');
         <div class="col-md-3">
             <?php
             include_once('../components/admin/menu_sidebar.php');
+            $query2 = "SELECT * FROM courses";
             ?>
         </div>
         <!-- Main do dashboard -->
@@ -34,6 +35,7 @@ include_once('../components/admin/header.php');
                             <label for="title">carga horaria em horas</label>
                             <input type="number" class="form-control" id="time" name="time" placeholder="Insira a carga horaria em horas">
                         </div>
+                        
                         <div class="form-group">
                             <label for="content">Descrição do Curso</label>
                             <textarea class="form-control" id="content" rows="5" required name="content" placeholder="Insira a descrição"></textarea>

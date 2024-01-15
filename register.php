@@ -16,7 +16,12 @@ include_once(__DIR__ . '/components/public/header.php');
       <div class="card-regi">
         <div class="card-body-reg">
           <h2 class="text-center mb-4">Cadastre-se</h2>
-          
+          <?php if (isset($_SESSION['message'])) { ?>
+                <div class="alert alert-<?= $_SESSION['message_type'] ?>" role="alert">
+                    <?php echo $_SESSION['message']; ?>
+                </div>
+            <?php unset($_SESSION['message']);
+            } ?>
           <!-- Formulário de Cadastro -->
           <form action="requests/register_post.php" method="POST">
             <div class="mb-3">
@@ -29,7 +34,8 @@ include_once(__DIR__ . '/components/public/header.php');
             </div>
             <div class="mb-3">
             <label for="cpf">CPF</label>
-            <input type="cpf" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF" minlength="11" required>
+            
+            <input type="text" class="form-control" id="cpf" name="cpf" oninput="formatCPF(this)" maxlength="11">
           </div>
             <div class="mb-3">
               <label for="password" class="form-label">Senha</label>
@@ -52,7 +58,13 @@ include_once(__DIR__ . '/components/public/header.php');
     </div>
   </div>
 </main>
-
+<script>
+        function formatCPF(input) {
+            var cpf = input.value.replace(/\D/g, '');
+            cpf = cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+            input.value = cpf;
+        }
+    </script>
 <?php
   include_once(__DIR__ . '/components/public/footer.php');
 ?>

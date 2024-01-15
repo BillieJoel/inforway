@@ -107,7 +107,7 @@ if (mysqli_num_rows($result) > 0) {
 
                                                 <li>
                                                     <a class="dropdown-item " href="#"
-                                            onclick="confirm('Você realmente deseja apagar esse curso?') ? window.location.href='requests/request_delete_banner.php?id=<?php echo $banner['id']; ?> ' : ''">
+                                            onclick="confirm('Você realmente deseja apagar esse benner?') ? window.location.href='requests/request_delete_banner.php?id=<?php echo $banner['id']; ?> ' : ''">
                                             <i class="bi bi-trash-fill"></i>excluir</a>
                                                                                    </li>
                                             </ul>

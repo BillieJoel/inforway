@@ -35,7 +35,7 @@ if (is_author_post($post_id, $connection) || $user_level == 'admin') {
             // Se o arquivo não existir, você pode querer lidar com isso de alguma forma
             $_SESSION['message'] = "Aviso: O arquivo não foi encontrado.";
             $_SESSION['message_type'] = "warning";
-            header("Location: ../banners.php");
+            header("Location: ../courses.php");
             exit;
         }
 
