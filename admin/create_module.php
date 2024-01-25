@@ -2,62 +2,65 @@
 include_once('../components/admin/header.php');
 include_once('../helpers/database.php');
 
-$connection = connectDatabase();
-
-if ($_SERVER['REQUEST_METHOD'] == "GET") {
-    $course = $_GET['id'];
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $course_id = $_GET['id'];
 }
-
-$query = "SELECT * FROM courses";
-
-$result = mysqli_query($connection, $query);
-
-if (mysqli_num_rows($result) > 0) {
-    $banners = mysqli_fetch_all($result, MYSQLI_ASSOC);
-}
-
 ?>
 
 <div class="card mt-3">
     <div class="card-body">
-        <form action="requests/request_create_module.php?id=<?php echo $course; ?>" method="post" enctype="multipart/form-data">
-            <img style="width: 250px;" id="imagem-preview" src="" class="img-fluid mb-3" onerror="substituirImagem(this)">
-            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+        <form action="requests/request_create_module.php?id=<?php echo $course_id ?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="name">Titulo</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Crie seu titulo">
-            </div>
-            <div class="form-group">
-                <label for="about">descrição</label>
-                <textarea class="form-control" id="about" rows="3" name="description" placeholder="Adicione uma descrição"></textarea>
+                <label for="videoUrl">URL do Vídeo</label>
+                <input type="text" class="form-control" id="videoUrl" name="videoUrl" placeholder="Cole a URL do vídeo" onchange="preverMiniatura()">
             </div>
 
             <div class="form-group">
-                <label for="image">Foto de miniatura</label>
-                <input type="file" id="imagem" name="image_tumbnail" accept="image/*" onchange="preverImagem()" required>
+                <label for="thumbnailPreview">Pré-visualização da Thumbnail</label>
+                <img style="width: 250px;" id="thumbnailPreview" class="img-fluid mb-3">
+                <!-- Adiciona campos ocultos para armazenar o código do vídeo e a URL da miniatura -->
+                <input type="hidden" id="videoCode" name="videoCode">
+                <input type="hidden" id="thumbnailUrl" name="thumbnailUrl">
             </div>
-            
+
+            <div class="form-group">
+                <label for="title">Título</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Crie seu título">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <textarea class="form-control" id="description" rows="3" name="description" placeholder="Adicione uma descrição"></textarea>
+            </div>
+
             <button type="submit" class="btn btn-success mt-2">Publicar</button>
         </form>
     </div>
 </div>
 
 <script>
-    function preverImagem() {
-        var input = document.getElementById('imagem');
-        var previewContainer = document.getElementById('preview-container');
-        var imagemPreview = document.getElementById('imagem-preview');
+    function preverMiniatura() {
+        var videoUrl = document.getElementById('videoUrl').value;
+        var videoId = extrairVideoId(videoUrl);
+            document.getElementById('videoCode').value = videoUrl // Armazena a URL da miniatura
+            
+            
 
-        if (input.files && input.files[0]) {
-            var leitor = new FileReader();
-
-            leitor.onload = function(e) {
-                imagemPreview.src = e.target.result;
-                previewContainer.style.display = 'block';
-            };
-
-            leitor.readAsDataURL(input.files[0]);
+        if (videoId) {
+            var thumbnailUrl = 'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg';
+            document.getElementById('thumbnailPreview').src = thumbnailUrl;
+            document.getElementById('thumbnailUrl').value = thumbnailUrl; // Armazena a URL da miniatura
+            
+            
+            document.getElementById('videoCode').value = videoId; // Armazena o código do vídeo
+        } else {
+            alert('URL do vídeo inválida');
         }
+    }
+
+    function extrairVideoId(url) {
+        var match = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+        return (match && match[1]) || null;
     }
 </script>
 

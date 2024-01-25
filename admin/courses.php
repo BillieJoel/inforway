@@ -122,7 +122,7 @@ if (mysqli_num_rows($result_users) > 0) {
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="edit_course.php?id=<?php echo $course['course_id']; ?>">
+                      <a class="dropdown-item" href="edit_module.php?id=<?php echo $module['module_id']; ?>">
                         <i class="bi bi-sliders"></i>editar
                       </a>
                     </li>

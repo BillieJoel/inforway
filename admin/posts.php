@@ -29,39 +29,45 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <th>Título</th>
             <th>Descrição</th>
             <th>Data de postagem</th>
-            <th>Curso</th>
+            <?php if($_SESSION['user_level'] == 'admin'){ ?>
             <th>Ações</th>
+            <?php }?>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($modules as $module) : ?>
-            <tr>
+            <tr class="button-list" onclick="redirectPage('<?php echo $module['module_id']; ?>')">
               <td>
-                <img style="width: 150px;" id="imagem-preview"  src="<?php echo "../" . $module['tumb'] ?>" class="img-fluid mb-3" onerror="substituirImagem(this)">
+                <img style="width: 150px;" id="imagem-preview"  src="<?php echo  $module['thumbnail_url'] ?>" class="img-fluid mb-3" onerror="substituirImagem(this)">
               </td>
               <td><?php echo $module['title'] ?></td>
               <td><?php echo $module['description'] ?></td>
               <td><?php echo $module['date_post'] ?></td>
-              <td><?php echo $course_id; ?></td> <!-- Aqui você precisa ajustar para obter o nome do curso, pois $course não está definido no código fornecido -->
+            
+              <?php if($_SESSION['user_level'] == 'admin'){ ?>
               <td>
-                <div class="dropdown">
-                  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              
+              <div class="dropdown">
+                  <button class="btn btn-sm btn-secondary module-action-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" onclick="handleButtonClick(event)">
                     Ações
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li>
-                      <a class="dropdown-item " href="#" onclick="confirm('Você realmente deseja apagar esse banner?') ? window.location.href='requests/request_delete_banner.php?id=<?php echo $banner['id']; ?>' : ''">
+                      <a class="dropdown-item " href="../admin/edit_module.php?id=<?php echo $module['module_id']; ?>">
                         <i class="bi bi-sliders"></i>editar
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item " href="#" onclick="confirm('Você realmente deseja apagar esse banner?') ? window.location.href='requests/request_delete_banner.php?id=<?php echo $banner['id']; ?>' : ''">
+                      <a class="dropdown-item " href="#" onclick="confirm('Você realmente deseja apagar esse modulo?') ? window.location.href='requests/request_delete_module.php?id=<?php echo $module['module_id']; ?>' : ''">
                         <i class="bi bi-trash-fill"></i>excluir
                       </a>
                     </li>
+
                   </ul>
                 </div>
+              
               </td>
+               <?php } ?>
             </tr>
           <?php endforeach; ?>
         </tbody>
@@ -75,9 +81,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 $currentPage = 'posts';
 include_once('../components/admin/footer.php');
 ?>
-
 <script>
-  function substituirImagem(imagem) {
-    imagem.src = "../src/img/ERRO_404.png";
-  }
+function substituirImagem(imagem) {
+  imagem.src = "../src/img/ERRO_404.png";
+}
+function redirectPage(courseId) {
+    window.location.href = "aula.php?id=" + courseId;
+}
+
+function handleButtonClick(event) {
+    event.stopPropagation();
+}
 </script>

@@ -33,7 +33,7 @@ include_once(__DIR__ . '/components/public/header.php');
 
 
 <main class="containers">
-  <div class="card-equipe">
+  <div class="card-equipe" style="margin-right: 200px;">
     <h1 class="mt-3 p-2">
       Equipe
     </h1>

@@ -56,6 +56,10 @@
     padding: 20px;
     bottom: 20px;
 }
+
+.card-profile h5{
+    color: white;
+}
 .card-body-profile {
     color: #fff;
     width: 500px;
@@ -367,7 +371,6 @@ footer.bg-custom {
     bottom: 20px;
     background-color: white;
 }
-
 .button-list {
     list-style: none;
     padding: 0;
