@@ -92,7 +92,7 @@ if (mysqli_num_rows($result_users) > 0) {
         <tbody>
           <?php foreach ($courses as $course) : ?>
             <tr class="button-list" onclick="redirectPage('<?php echo $course['course_id']; ?>')">
-              <td><img src="<?php echo "../" . $course['image_course']; ?>" alt="erro404" width="200" height="100"></td>
+              <td><img src="<?php echo "../" . $course['image_course']; ?>"  width="200" height="100" onerror="substituirImagem(this)"></td>
               <?php
               $teacherNames = array();
               foreach ($teachers as $teacher) {
@@ -111,24 +111,25 @@ if (mysqli_num_rows($result_users) > 0) {
               <td><?php echo $course['name_course'] ?></td>
               <td><?php echo $course['course_id'] ?></td>
               <td>
-                <div class="dropdown">
-                  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="handleButtonClick(event)">
-                    Ações
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li>
-                      <a class="dropdown-item" href="#" onclick="confirm('Você realmente deseja apagar esse curso?') ? window.location.href='requests/request_delete_course.php?id=<?php echo $course['course_id']; ?>' : ''">
-                        <i class="bi bi-trash-fill"></i>excluir
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="edit_module.php?id=<?php echo $module['module_id']; ?>">
-                        <i class="bi bi-sliders"></i>editar
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </td>
+  <div class="dropdown">
+    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="handleButtonClick(event)">
+      Ações
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li>
+        <a class="dropdown-item" href="#" onclick="confirmDelete(<?php echo $course['course_id']; ?>)">
+          <i class="bi bi-trash-fill"></i> Excluir
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="edit_module.php?id=<?php echo $module['module_id']; ?>">
+          <i class="bi bi-sliders"></i> Editar
+        </a>
+      </li>
+    </ul>
+  </div>
+</td>
+
             </tr>
           <?php endforeach; ?>
           <a href="../admin/create_course.php" class="btn btn-success my-2 my-sm-0 text-light">Adicionar novo curso</a>
@@ -139,12 +140,22 @@ if (mysqli_num_rows($result_users) > 0) {
 </section>
 
 <script>
+  function confirmDelete(courseId) {
+    if (confirm('Você realmente deseja apagar esse curso?')) {
+      window.location.href = 'requests/request_delete_course.php?id=' + courseId;
+    }
+  }
+
   function redirectPage(courseId) {
-    window.location.href = "posts.php?id=" + courseId;
+    window.location.href = 'posts.php?id=' + courseId;
+  }
+
+  function substituirImagem(imagem) {
+    imagem.src = '../src/img/ERRO_404.png';
   }
 
   function handleButtonClick(event) {
-    event.stopPropagation(); 
+    event.stopPropagation();
   }
 </script>
 

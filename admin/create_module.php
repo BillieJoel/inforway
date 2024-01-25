@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     function preverMiniatura() {
         var videoUrl = document.getElementById('videoUrl').value;
         var videoId = extrairVideoId(videoUrl);
+
             document.getElementById('videoCode').value = videoUrl // Armazena a URL da miniatura
             
             

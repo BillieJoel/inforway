@@ -24,6 +24,7 @@ $connection = connectDatabase();
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  
   <?php
     // Inclua as informações da página atual
     if (isset($pageInfo)) {
@@ -50,15 +51,9 @@ $connection = connectDatabase();
                         <i class="fas fa-user"></i> <?= $_SESSION['user_name'] ?? 'Usuário' ?>
                     </a>
                     <ul class="dropdown-menu" style="background-color: #e25c0f;" aria-labelledby="navbarDropdown">
-                  
-            
-                        <li><a class="dropdown-item" href="profile.php"><i class="fas fa-user"></i> Perfil</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                       
-                        <li><a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out"></i> Sair</a></li>
-
+                        <li><a class="dropdown-item" style="background-color: #e25c0f;" href="profile.php"><i class="fas fa-user"></i> Perfil</a></li>
+                        <li><hr class="dropdown-divider" ></li>
+                        <li><a class="dropdown-item" style="background-color: #e25c0f;" href="logout.php"><i class="fas fa-sign-out"></i> Sair</a></li>
                     </ul>
                 </li>
             </ul>

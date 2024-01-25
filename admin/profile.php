@@ -26,7 +26,7 @@ if (mysqli_num_rows($result) > 0) {
     $image = $user['image_profile'];
 } else {
     // Redireciona para a página de login
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit;
 }
 
@@ -34,6 +34,7 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 
 <!-- Conteúdo da página de perfil -->
+
 <main class="container py-5">
     <div class="row">
         <!-- Sidebar do dashboard -->

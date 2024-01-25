@@ -3,10 +3,10 @@ session_start();
 
 include_once('../../helpers/database.php');
 
-$user_id = $_GET['user_id'];
+$user_id = $_GET['id'];
 $connection = connectDatabase();
 $root_dir = $_SERVER['DOCUMENT_ROOT'] . '/inforway';
-$query = "SELECT * FROM users WHERE user_idid = '$user_id'";
+$query = "SELECT * FROM users WHERE user_id = '$user_id'";
 $result = mysqli_query($connection, $query);
 
     if ($result) {

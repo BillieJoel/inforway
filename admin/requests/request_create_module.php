@@ -16,8 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $result = mysqli_query($connection, $query);
 
     if ($result) {
-        echo "Módulo inserido com sucesso!";
+        $_SESSION['message'] = "Módulo inserido com sucesso!";
+        $_SESSION['message_type'] = "success";
+        header("Location: ../courses.php");
     } else {
-        echo "Erro ao inserir módulo: " . mysqli_error($connection);
+        $_SESSION['message'] = "Erro ao inserir módulo: " . mysqli_error($connection);
+        $_SESSION['message_type'] = "danger";
+        header("Location: ../courses.php");
     }
 }

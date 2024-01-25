@@ -26,6 +26,8 @@
     background-color: rgb(36, 36, 36);
 }
 
+
+
 /* Button do Main */
 
 .btn-custom {
@@ -55,6 +57,10 @@
     border-radius: 8px;
     padding: 20px;
     bottom: 20px;
+}
+
+.card-profile h5{
+    color: white;
 }
 .card-body-profile {
     color: #fff;
@@ -298,6 +304,117 @@ a:hover {
 }
 
 
+/* Index */
+
+.card-cursos ul,
+li {
+    color: #fff;
+}
+
+.card-cursos p {
+    text-align: center;
+    color: #fff;
+}
+
+.card-cursos h4 {
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    color: #f4732a;
+}
+
+
+.card-cursos {
+    margin: auto;
+    background-color: rgb(36, 36, 36);
+    width: 250px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.textinicio2 h1 {
+    color: #f4732a;
+}
+
+.textinicio2 {
+    margin: auto;
+    background-color: rgb(36, 36, 36);
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+body {
+    background-image: url('../src/img/background.png');
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-attachment: fixed;
+}
+
+/* Footer */
+
+footer.row {
+    text-align: center;
+}
+
+
+footer.bg-custom {
+    background-color: rgb(36, 36, 36);
+
+}
+
+/* Alunos */
+.card-alunos p{
+    color: #000;
+}
+.card-alunos ul{
+    color: #000;
+}
+.card-alunos li{
+    color: #000;
+}
+.card-alunos a{
+    color: #000;
+}
+.card-alunos:hover a{
+    color: #f4732a;;
+}
+
+.card-alunos{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    bottom: 20px;
+    background-color: #ffffff;
+}
+
+
+/* Card my course */
+
+.card-mycourse{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    bottom: 20px;
+    background-color: white;
+    text-align:center;
+}
+
+
+/* Tela de pagamento */
+.card-pay{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 600px;
+}
+
+.card-pay h2{
+    color: #000;
+}
 /* Index */
 
 .card-cursos ul,

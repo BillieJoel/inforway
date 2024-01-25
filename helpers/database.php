@@ -4,7 +4,7 @@ function connectDatabase(){
     $server = 'localhost';
     $user = 'root';
     $password = '';
-    $database = 'banco_infoway';
+    $database = 'banco_inforway';
 
     $connection = mysqli_connect($server, $user, $password, $database);
 
